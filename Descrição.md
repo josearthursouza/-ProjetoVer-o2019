@@ -1,5 +1,5 @@
 # ProjetoVerao2019 - Descrição
-*José Arthur e Rener Oliveira* 
+__José Arthur e Rener Oliveira__
 
 ## Parâmentros Utilizados: Médias e Coeficientes de Variação
 - parametro 1
