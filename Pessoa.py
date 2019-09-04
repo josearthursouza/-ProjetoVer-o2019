@@ -21,3 +21,4 @@ class Populacao:
 
 p1=Pessoa(Pessoa.tipo_grad())
 print(p1.tipo_grad)
+print("testando push")
