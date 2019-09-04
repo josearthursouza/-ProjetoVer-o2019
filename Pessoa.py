@@ -1,4 +1,3 @@
-import random
 class Pessoa:
     def __init__(self, tipo_grad,rede_ensino,modalidade,dif_frequencia,sexo,cor,rendimento_percapita,):
         self.tipo_grad = tipo_grad
@@ -8,10 +7,6 @@ class Pessoa:
         self.sexo = sexo
         self.cor = cor
         self.rendimento_percapita = rendimento_percapita
-
-
-p1=Pessoa("não superior")
-print(p1.tipo_grad)
 
 
 
