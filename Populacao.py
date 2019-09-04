@@ -8,8 +8,8 @@ class Populacao:
     def amostra(self, n):
         pass
     def tipo_grad():
-        j=random.uniform(477-((3.7/100)*7242),477+((3.7/100)*7242))
-        i=random.uniform(6765-((0.3/100)*7242),6765+((0.3/100)*7242))
+         j=random.uniform(477-((#3.7/100)*#####7242),477+((#3.7/100)*#####7242))
+        i=random.uniform(6765-((#0.3/100)*#####7242),6765+((#0.3/100)*#####7242))
         k=7242+i+j
         m=random.uniform(0,k)
         if m<=j:
