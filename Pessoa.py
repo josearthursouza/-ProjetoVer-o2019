@@ -1,5 +1,5 @@
 class Pessoa:
-    def __init__(self, tipo_grad,rede_ensino,modalidade,dif_frequencia,sexo,cor,rendimento_percapita,):
+    def __init__(self, tipo_grad,rede_ensino,modalidade,dif_frequencia,sexo,cor,rendimento_percapita):
         self.tipo_grad = tipo_grad
         self.rede_ensino = rede_ensino
         self.modalidade = modalidade
