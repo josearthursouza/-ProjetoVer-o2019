@@ -6,7 +6,7 @@ class Pessoa:
         self.dif_frequencia = dif_frequencia #okay
         self.sexo = sexo #okay
         self.cor = cor #okay
-        self.rendimento_percapita = rendimento_percapita
+        self.rendimento_percapita = rendimento_percapita #okay
 
 
 

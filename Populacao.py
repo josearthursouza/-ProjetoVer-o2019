@@ -1,4 +1,4 @@
-import numpy as np
+#import numpy as np
 import random
 import Pessoa
 class Populacao:
@@ -9,65 +9,54 @@ class Populacao:
         pass
     def tipo_grad():
         #desvpad=cv*media
-        dv1=(3.7*6.6)/100
-        j=random.uniform(477-dv1,477+dv1)
+        dv1=(3.7)/100
+        j=random.uniform(477*(1-dv1),477*(1+dv1))
         m=random.uniform(0,7242)
         if m<=j:
             return 'superior de tecnologia'
         else:
             return 'não superior de tecnologia'
     def sexo():
-        dv1 = (1.7 * 42.8) / 100
-        j = random.uniform(3118 - dv1, 3118 + dv1)
+        dv1 = (1.7)/100
+        j = random.uniform(3118*(1-dv1), 3118*(1+dv1))
         m = random.uniform(0, 7288)
         if m <= j:
             return 'homem'
         else:
             return 'mulher'
     def cor():
-        dv1 = (1.7 * 57.) / 100
-        j = random.uniform(4154 - dv1, 4154 + dv1)
+        dv1 = (1.7)/100
+        j = random.uniform(4154*(1-dv1), 4154*(1+dv1))
         m = random.uniform(0, 7288)
         if m <= j:
             return 'branca'
         else:
             return 'preta ou parda'
     def rede_ensino():
-        dv1 = (22. * 8.1) / 100
-        j = random.uniform(105 - dv1, 105 + dv1)
-        m = random.uniform(0, 477)
+        dv1 = (91.)/100
+        j = random.uniform(105*(1-dv1), 105*(1+dv1)
+        m = random.uniform(0,477)
         if m <= j:
             return 'pública'
         else:
             return 'particular'
     def modalidade():
-        dv1 = (1.8 * 82.2) / 100
-        j = random.uniform(392 - dv1, 392 + dv1)
-        m = random.uniform(0, 477)
+        dv1 = (1.8)/100
+        j = random.uniform(392*(1-dv1), 392*(1+dv1))
+        m = random.uniform(0,477)
         if m <= j:
             return 'presencial'
         else:
             return 'a distância'
     def dif_frequencia():
-        dv1 = (8.6 * 20.3) / 100
-        j = random.uniform(97 - dv1, 97 + dv1)
-        m = random.uniform(0, 477)
+        dv1 = (8.6)/100
+        j = random.uniform(97*(1-dv1), 97*(1+dv1))
+        m = random.uniform(0,477)
         if m <= j:
             return 'havia'
         else:
             return 'não havia'
-#J=[]
-#for j in range(100):
- #   p=[]
-  #  for i in range(100):
-   #     p2=Pessoa.Pessoa(Populacao.tipo_grad())
-    #    p3=(p2.tipo_grad)
-     #   p.append(p3)
-    #print(p)
-    #g=p.count("superior de tecnologia")
-    #print(g)
-    #J.append(g)
-#print((sum(J))/100)
+
             
 ##############by Rener### apagar isso depois - apenas para marcar a funcao criada         
 #Definindo o parâmetro rendimento_percapita
@@ -129,20 +118,17 @@ class Populacao:
             return A     
 ##############by Rener### apagar isso depois - apenas para marcar a funcao criada
 
-#print("testando push de novo")
-p1=Pessoa.Pessoa(Populacao.tipo_grad())
-print(p1.tipo_grad)
-p1=Pessoa.Pessoa(Populacao.sexo())
-print(p1.sexo)
+###########################################################################################
+#testando alguns atributos
 J=[]
 for j in range(100):
     p=[]
     for i in range(100):
-        p2=Pessoa.Pessoa(Populacao.sexo())
-        p3=(p2.sexo)
+        p2=Pessoa.Pessoa( Populacao.tipo_grad(),Populacao.rede_ensino(),Populacao.modalidade(),Populacao.dif_frequencia(),Populacao.sexo(),Populacao.cor(),Populacao.rendimento_percapita())
+        p3=(p2.tipo_grad)
         p.append(p3)
-    print(p)
-    g=p.count("mulher")
-    print(g)
+    #print(p)
+    g=p.count("superior de tecnologia")
+    #print(g)
     J.append(g)
 print((sum(J))/100)
