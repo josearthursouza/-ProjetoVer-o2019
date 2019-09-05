@@ -21,7 +21,22 @@ class Populacao:
             return 'superior de tecnologia'
         else:
             return 'não superior de tecnologia'
-
+    def sexo():
+        dv1 = (1.7 * 42.8) / 100
+        j = random.uniform(3118 - dv1, 3118 + dv1)
+        m = random.uniform(0, 7288)
+        if m <= j:
+            return 'homem'
+        else:
+            return 'mulher'
+    def cor_raça():
+        dv1 = (1.7 * 42.8) / 100
+        j = random.uniform(3118 - dv1, 3118 + dv1)
+        m = random.uniform(0, 7288)
+        if m <= j:
+            return 'homem'
+        else:
+            return 'mulher'
 
 #J=[]
 #for j in range(100):
@@ -99,3 +114,17 @@ class Populacao:
 #print("testando push de novo")
 p1=Pessoa.Pessoa(Populacao.tipo_grad())
 print(p1.tipo_grad)
+p1=Pessoa.Pessoa(Populacao.sexo())
+print(p1.sexo)
+J=[]
+for j in range(100):
+    p=[]
+    for i in range(100):
+        p2=Pessoa.Pessoa(Populacao.sexo())
+        p3=(p2.sexo)
+        p.append(p3)
+    print(p)
+    g=p.count("mulher")
+    print(g)
+    J.append(g)
+print((sum(J))/100)
