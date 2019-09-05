@@ -8,14 +8,33 @@ class Populacao:
     def amostra(self, n):
         pass
     def tipo_grad():
-         j=random.uniform(477-((#3.7/100)*#####7242),477+((#3.7/100)*#####7242))
-        i=random.uniform(6765-((#0.3/100)*#####7242),6765+((#0.3/100)*#####7242))
-        k=7242+i+j
-        m=random.uniform(0,k)
+        #desvpad=cv*media
+        dv1=(3.7*6.6)/100
+        #dv2=(0.3*93.4)/100
+        #
+        #
+        j=random.uniform(477-dv1,477+dv1)
+        #i=random.uniform(6765-dv2,6765+dv2)
+        #k=i+j
+        m=random.uniform(0,7242)
         if m<=j:
             return 'superior de tecnologia'
         else:
             return 'não superior de tecnologia'
+
+
+#J=[]
+#for j in range(100):
+ #   p=[]
+  #  for i in range(100):
+   #     p2=Pessoa.Pessoa(Populacao.tipo_grad())
+    #    p3=(p2.tipo_grad)
+     #   p.append(p3)
+    #print(p)
+    #g=p.count("superior de tecnologia")
+    #print(g)
+    #J.append(g)
+#print((sum(J))/100)
             
 ##############by Rener### apagar isso depois - apenas para marcar a funcao criada         
 #Definindo o parâmetro rendimento_percapita
