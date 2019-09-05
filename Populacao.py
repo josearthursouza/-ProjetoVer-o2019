@@ -10,12 +10,7 @@ class Populacao:
     def tipo_grad():
         #desvpad=cv*media
         dv1=(3.7*6.6)/100
-        #dv2=(0.3*93.4)/100
-        #
-        #
         j=random.uniform(477-dv1,477+dv1)
-        #i=random.uniform(6765-dv2,6765+dv2)
-        #k=i+j
         m=random.uniform(0,7242)
         if m<=j:
             return 'superior de tecnologia'
@@ -29,15 +24,38 @@ class Populacao:
             return 'homem'
         else:
             return 'mulher'
-    def cor_raça():
-        dv1 = (1.7 * 42.8) / 100
-        j = random.uniform(3118 - dv1, 3118 + dv1)
+    def cor():
+        dv1 = (1.7 * 57.) / 100
+        j = random.uniform(4154 - dv1, 4154 + dv1)
         m = random.uniform(0, 7288)
         if m <= j:
-            return 'homem'
+            return 'branca'
         else:
-            return 'mulher'
-
+            return 'preta ou parda'
+    def rede_ensino():
+        dv1 = (22. * 8.1) / 100
+        j = random.uniform(105 - dv1, 105 + dv1)
+        m = random.uniform(0, 477)
+        if m <= j:
+            return 'pública'
+        else:
+            return 'particular'
+    def modalidade():
+        dv1 = (1.8 * 82.2) / 100
+        j = random.uniform(392 - dv1, 392 + dv1)
+        m = random.uniform(0, 477)
+        if m <= j:
+            return 'presencial'
+        else:
+            return 'a distância'
+    def dif_frequencia():
+        dv1 = (8.6 * 20.3) / 100
+        j = random.uniform(97 - dv1, 97 + dv1)
+        m = random.uniform(0, 477)
+        if m <= j:
+            return 'havia'
+        else:
+            return 'não havia'
 #J=[]
 #for j in range(100):
  #   p=[]
