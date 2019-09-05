@@ -1,12 +1,23 @@
-#import numpy as np
+
 import random
 import Pessoa
 class Populacao:
     def _init_(self, tamanho=1000):
         self.tamanho = tamanho
-        self.individuos = []
-    def amostra(self, n):
-        pass
+        #self.individuos = []
+        o=[]
+        for i in range(tamanho):
+            p2 = Pessoa.Pessoa(Populacao.tipo_grad(), Populacao.rede_ensino(), Populacao.modalidade(),
+                               Populacao.dif_frequencia(), Populacao.sexo(), Populacao.cor(),
+                               Populacao.rendimento_percapita())
+            #for j in [p2.tipo_grad, p2.rede_ensino, p2.modalidade, p2.dif_frequencia, p2.sexo, p2.cor,
+                      #p2.rendimento_percapita]:
+                #individuos.append(j)
+            self.o.append(p2)
+        self.individuos=o
+        ########## PRECISA MUDAR ISS AQUI
+    def amostra(self, N):
+        return rm.choice(self.individuos, N)
     def tipo_grad():
         #desvpad=cv*media
         dv1=(3.7)/100
@@ -34,8 +45,8 @@ class Populacao:
             return 'preta ou parda'
     def rede_ensino():
         dv1 = (91.)/100
-        j = random.uniform(105*(1-dv1), 105*(1+dv1)
-        m = random.uniform(0,477)
+        j = random.uniform(105*(1-dv1), 105*(1+dv1))
+        m = random.uniform(0, 477)
         if m <= j:
             return 'pública'
         else:
@@ -43,7 +54,7 @@ class Populacao:
     def modalidade():
         dv1 = (1.8)/100
         j = random.uniform(392*(1-dv1), 392*(1+dv1))
-        m = random.uniform(0,477)
+        m = random.uniform(0, 477)
         if m <= j:
             return 'presencial'
         else:
@@ -51,7 +62,7 @@ class Populacao:
     def dif_frequencia():
         dv1 = (8.6)/100
         j = random.uniform(97*(1-dv1), 97*(1+dv1))
-        m = random.uniform(0,477)
+        m = random.uniform(0, 477)
         if m <= j:
             return 'havia'
         else:
@@ -117,18 +128,5 @@ class Populacao:
         else:
             return A     
 ##############by Rener### apagar isso depois - apenas para marcar a funcao criada
-
-###########################################################################################
-#testando alguns atributos
-J=[]
-for j in range(100):
-    p=[]
-    for i in range(100):
-        p2=Pessoa.Pessoa( Populacao.tipo_grad(),Populacao.rede_ensino(),Populacao.modalidade(),Populacao.dif_frequencia(),Populacao.sexo(),Populacao.cor(),Populacao.rendimento_percapita())
-        p3=(p2.tipo_grad)
-        p.append(p3)
-    #print(p)
-    g=p.count("superior de tecnologia")
-    #print(g)
-    J.append(g)
-print((sum(J))/100)
+Brasil=Populacao
+Brasil.individuos()
