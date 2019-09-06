@@ -1,67 +1,57 @@
-
 import random
 import Pessoa
 class Populacao:
-    def _init_(self, tamanho=1000):
+    def __init__(self, tamanho=1000):
         self.tamanho = tamanho
-        #self.individuos = []
-        o=[]
-        for i in range(tamanho):
-            p2 = Pessoa.Pessoa(Populacao.tipo_grad(), Populacao.rede_ensino(), Populacao.modalidade(),
+        self.individuos = [Pessoa.Pessoa(Populacao.tipo_grad(), Populacao.rede_ensino(), Populacao.modalidade(),
                                Populacao.dif_frequencia(), Populacao.sexo(), Populacao.cor(),
-                               Populacao.rendimento_percapita())
-            #for j in [p2.tipo_grad, p2.rede_ensino, p2.modalidade, p2.dif_frequencia, p2.sexo, p2.cor,
-                      #p2.rendimento_percapita]:
-                #individuos.append(j)
-            self.o.append(p2)
-        self.individuos=o
-        ########## PRECISA MUDAR ISS AQUI
+                               Populacao.rendimento_percapita()) for i in range(tamanho)]
+
     def amostra(self, N):
-        return rm.choice(self.individuos, N)
+        return random.sample(self.individuos, N)
     def tipo_grad():
-        #desvpad=cv*media
-        dv1=(3.7)/100
-        j=random.uniform(477*(1-dv1),477*(1+dv1))
+        cv1=(3.7)/100
+        j=random.uniform(477*(1-cv1),477*(1+cv1))
         m=random.uniform(0,7242)
         if m<=j:
             return 'superior de tecnologia'
         else:
             return 'não superior de tecnologia'
     def sexo():
-        dv1 = (1.7)/100
-        j = random.uniform(3118*(1-dv1), 3118*(1+dv1))
+        cv1 = (1.7)/100
+        j = random.uniform(3118*(1-cv1), 3118*(1+cv1))
         m = random.uniform(0, 7288)
         if m <= j:
             return 'homem'
         else:
             return 'mulher'
     def cor():
-        dv1 = (1.7)/100
-        j = random.uniform(4154*(1-dv1), 4154*(1+dv1))
+        cv1 = (1.7)/100
+        j = random.uniform(4154*(1-cv1), 4154*(1+cv1))
         m = random.uniform(0, 7288)
         if m <= j:
             return 'branca'
         else:
             return 'preta ou parda'
     def rede_ensino():
-        dv1 = (91.)/100
-        j = random.uniform(105*(1-dv1), 105*(1+dv1))
+        cv1 = (91.)/100
+        j = random.uniform(105*(1-cv1), 105*(1+cv1))
         m = random.uniform(0, 477)
         if m <= j:
             return 'pública'
         else:
             return 'particular'
     def modalidade():
-        dv1 = (1.8)/100
-        j = random.uniform(392*(1-dv1), 392*(1+dv1))
+        cv1 = (1.8)/100
+        j = random.uniform(392*(1-cv1), 392*(1+cv1))
         m = random.uniform(0, 477)
         if m <= j:
             return 'presencial'
         else:
             return 'a distância'
     def dif_frequencia():
-        dv1 = (8.6)/100
-        j = random.uniform(97*(1-dv1), 97*(1+dv1))
+        cv1 = (8.6)/100
+        j = random.uniform(97*(1-cv1), 97*(1+cv1))
         m = random.uniform(0, 477)
         if m <= j:
             return 'havia'
@@ -69,11 +59,8 @@ class Populacao:
             return 'não havia'
 
             
-##############by Rener### apagar isso depois - apenas para marcar a funcao criada         
-#Definindo o parâmetro rendimento_percapita
     def rendimento_percapita():
-        #copiando dados de rendimento per capita da tabela
-    #definindo as strings das faixas salariais para facilitar posterior uso
+        #definindo as strings das faixas salariais para facilitar posterior uso
         A="Mais de 5 salários mínimos"
         B="Mais de 3 a 5 salários mínimos"
         C="Mais de 2 a 3 salários mínimos"
@@ -127,6 +114,4 @@ class Populacao:
             return B
         else:
             return A     
-##############by Rener### apagar isso depois - apenas para marcar a funcao criada
-Brasil=Populacao
-Brasil.individuos()
+
