@@ -10,7 +10,7 @@ No total, foram 7, sendo eles:
 - _Dificuldade de frequentar as aulas_: Possuía ou não possuía
 - _Sexo:_ Masculino ou Feminino
 - _Cor_: Branca ou "preta ou parda" (categoria única)
-- _Rendimento per capita:_ Faixa salarial medida em salários mínimos, nos intervalos $(0,\frac12),(\frac12,1),(1,2)(2,3),(3,5)$ e $(5,\infty)$
+- _Rendimento per capita:_ Faixa salarial medida em salários mínimos, nos intervalos (0,1/2),(1/2,1),(1,2)(2,3),(3,5) e de "maior que 5".
  
  Segue o código implementado:
 ```python
@@ -50,11 +50,11 @@ Depois, gera-se uma função amostra, que utiliza o método _sample_ da bibliote
 #### Funções geradoras de atributos
 Para gerar uma população onde os seus atributos seguem razoavelmente os dados oficiais da PNAD, um ideia muito simples foi implementada:
 Utilizamos os valores absolutos de cada categoria, "jogamos uma moeda", ou seja, geramos um número aleatório entre zero e o total absoluto da PNAD, e vemos em qual faixa o valor se encaixa.
-Por exemlo, no caso de sexo, cujas duas únicas categorias são homem e mulher, usamos o total absoluto de $7288$, e dentre estes segunda os dados oficiais, $3118$ eram homens e $4170$ eram mulheres. A "moeda" vai então de zero ao total de $7288$, e se for menor que $3118$ o sexo da pessoa gerada será homem, se for maior, será mulher.
+Por exemlo, no caso de sexo, cujas duas únicas categorias são homem e mulher, usamos o total absoluto de 7288, e dentre estes segunda os dados oficiais, 3118 eram homens e 4170 eram mulheres. A "moeda" vai então de zero ao total de 7288, e se for menor que 3118 o sexo da pessoa gerada será homem, se for maior, será mulher.
 
 Essa abordagem garante que, criando uma população razoavelmente grande, a proporção de sexos esteja compatível com os dados reais. Entretanto, temos que incluir no cálculo o coeficiente de variação, que nada mais é do que a média sobre o desvio padrão da dispersão dos dados, que mostra o "_erro_" da distribuição dos dados. Este valor na planilha do IBGE é dado em percentual.
-No caso do sexo, o "_cv_" (coeficiente de variação) dos homens é de $1.7\%$, ou seja, a proporção de homens é $3118$ de $7288$ com uma "_margem de erro_" de $1,7\%$ para mais ou para menos.
-Com isso definimos uma variável __j__ que a cada chamada da função irá gerar um número aleatório pertencente ao intervalo $[3118-\frac{17}{100}\cdot3118,3118+\frac{17}{100}\cdot3118)$. Esse número __j__ é que será utilizado como parâmetro de divisão quando a moeda for jogada, e não o valor $3118$ cravado; e isso implementa na simulação o coeficiente de variação dos dados.
+No caso do sexo, o "_cv_" (coeficiente de variação) dos homens é de 1.7%, ou seja, a proporção de homens é 3118 de 7288 com uma "_margem de erro_" de 1,7% para mais ou para menos.
+Com isso definimos uma variável __j__ que a cada chamada da função irá gerar um número aleatório pertencente ao intervalo que vai de 3118-1,7%.3118 até 3118+1,7%.3118. Esse número __j__ é que será utilizado como parâmetro de divisão quando a moeda for jogada, e não o valor 3118 cravado; e isso implementa na simulação o coeficiente de variação dos dados.
 ```python
     def sexo():
         cv1 = (1.7)/100
